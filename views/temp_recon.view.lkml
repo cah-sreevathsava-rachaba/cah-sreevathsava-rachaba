@@ -110,6 +110,13 @@ view: temp_recon {
   dimension: source_name {
     type: string
     sql: ${TABLE}.SOURCE_NAME ;;
+    html: <a href = "https://caretracker-looker-dev.cardinalhealth.net:9999/dashboards-next/63?PRACTICES={{ value }}&PROCESSED+DATE={{_filters['temp_recon.audit_load_tm_date']| url_encode }}" target="_self" >{{value}}</a> ;;
+    #link: {
+    #  label: "dashboard test"
+    #url: "https://caretracker-looker-dev.cardinalhealth.net:9999/dashboards-next/63?PRACTICES={{ value }}"
+   # url: "https://caretracker-looker-dev.cardinalhealth.net:9999/dashboards-next/63?PRACTICES={{ value }}&PROCESSED+DATE={{_filters['temp_recon.audit_load_tm_date']| url_encode }}"
+
+    #  }
   }
 
   dimension: table_name {
@@ -146,7 +153,10 @@ view: temp_recon {
   measure: total_recs_success {
     type: sum
     sql: ${TABLE}.TOTAL_RECS_SUCCESS ;;
-    drill_fields: [application_id,source_name,table_name,file_processed,total_recs_processed,total_recs_success,total_recs_fail,run_ts_date,security_role_cd]
+    #drill_fields: [application_id,source_name,table_name,file_processed,total_recs_processed,total_recs_success,total_recs_fail,run_ts_date,security_role_cd]
+    link: {
+      url: "https://caretracker-looker-dev.cardinalhealth.net:9999/dashboards-next/63?DATA+QUALITY={{ value }}&SEVERITY={{ value }}&PRACTICES={{ value }}&PROCESSED+DATE={{ value }}"
+        }
   }
 
   measure: count {
