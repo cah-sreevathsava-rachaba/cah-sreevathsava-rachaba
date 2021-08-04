@@ -13,7 +13,8 @@ persist_with: vandelay3_looker_default_datagroup
 #explore: payer {}
 explore: temp_exception {from:temp_exception}
 explore: temp_recon {from:temp_recon}
-
+explore:  exception{from:exception}
+explore: reconciliation {from:reconciliation}
 
 explore:  exep_reocn{
   label: "exep_reocn"

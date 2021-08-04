@@ -63,7 +63,14 @@ view: temp_exception {
 
   dimension: dq_category {
     type: string
-    sql: ${TABLE}.DQ_CATEGORY ;;
+    sql: CASE
+    WHEN ${TABLE}.DQ_CATEGORY='CODESET_LOOKUP' THEN 'CODESET LOOKUP'
+    WHEN ${TABLE}.DQ_CATEGORY='DATE_STANDARDIZATION' THEN 'DATE STANDARDIZATION'
+    WHEN ${TABLE}.DQ_CATEGORY='MPI_LOOKUP' THEN 'MP LOOKUP'
+    WHEN ${TABLE}.DQ_CATEGORY='NULL_CHECK' THEN 'NULL CHECK'
+    ELSE ${TABLE}.DQ_CATEGORY
+    END ;;
+    #sql: ${TABLE}.DQ_CATEGORY ;;
   }
 
   dimension: error_description {
