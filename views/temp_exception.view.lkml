@@ -61,6 +61,7 @@ view: temp_exception {
     sql: ${TABLE}.DATA_SOURCE ;;
   }
 
+
   dimension: dq_category {
     type: string
     sql: CASE
