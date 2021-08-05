@@ -1,5 +1,5 @@
 view: temp_exception {
-  sql_table_name: `vndy-data-np-cah.bq_temp.temp_exception`
+  sql_table_name: `vndy-data-np-cah.l1_looker_test.temp_exception`
     ;;
 
   dimension: application_id {

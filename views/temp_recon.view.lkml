@@ -1,5 +1,5 @@
 view: temp_recon {
-  sql_table_name: `vndy-data-np-cah.bq_temp.temp_recon`
+  sql_table_name: `vndy-data-np-cah.l1_looker_test.temp_recon`
     ;;
 
   dimension: application_id {
